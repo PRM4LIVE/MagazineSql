@@ -1,3 +1,5 @@
+import com.mysql.jdbc.UpdatableResultSet;
+
 import java.sql.*;
 import java.util.Scanner;
 
@@ -18,6 +20,19 @@ public class Main {
                 statement.execute("CREATE TABLE " + str + "(product char (100), price double)");
                 statement.execute("INSERT INTO chatid VALUE ('" + getChatId + "')");
             }
+            System.out.println("Поступает запрос на сумму в корзине");
+            //String str2 = "basket" + scanner.nextLine();
+
+            ResultSet sm = statement.executeQuery("SELECT SUM (price) FROM basket145145");
+
+
+
+
+
+
+
+
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
