@@ -24,19 +24,23 @@ public class Main {
             String str2 = "basket" + scanner.nextLine();
             ResultSet smp = statement.executeQuery("SELECT price FROM " + str2);
             double sum = 0;
-            while (smp.next()){
-                double price = smp.getDouble("price");
+            while (smp.next()) {
+                double price = smp.getDouble(1);
                 sum = sum + price;
             }
-            System.out.println(sum + " руб");
+            System.out.println("К оплате: " + sum + " руб");
 
 
+            ResultSet rs1 = statement.executeQuery("select id, PRICE, qty, status from orderlist");
+            while (rs1.next()) {
+                int idOL = rs1.getInt("id");
+                Double priceOL = rs1.getDouble("PRICE");
+                int qtyOL = rs1.getInt("qty");
+                String stsOL = rs1.getString("status");
+                System.out.println(idOL + ", " + priceOL +
+                        ", " + qtyOL + ", " + stsOL);
 
-
-
-
-
-
+            }
 
 
         } catch (SQLException e) {

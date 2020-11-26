@@ -1,9 +1,9 @@
-import java.util.Scanner;
+import com.mysql.jdbc.UpdatableResultSet;
 
+import java.sql.*;
+import java.util.Scanner;
 public class test1 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        String str = "basket"+scanner.nextLine();
-        System.out.println(str);
+
     }
 }
