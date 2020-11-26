@@ -21,9 +21,15 @@ public class Main {
                 statement.execute("INSERT INTO chatid VALUE ('" + getChatId + "')");
             }
             System.out.println("Поступает запрос на сумму в корзине");
-            //String str2 = "basket" + scanner.nextLine();
+            String str2 = "basket" + scanner.nextLine();
+            ResultSet smp = statement.executeQuery("SELECT price FROM " + str2);
+            double sum = 0;
+            while (smp.next()){
+                double price = smp.getDouble("price");
+                sum = sum + price;
+            }
+            System.out.println(sum + " руб");
 
-            ResultSet sm = statement.executeQuery("SELECT SUM (price) FROM basket145145");
 
 
 
