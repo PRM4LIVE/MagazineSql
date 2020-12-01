@@ -13,6 +13,7 @@ public class InsertCatalog {
             String catStr = scanner.nextLine();
             Statement statement = connection.createStatement();
             statement.execute("INSERT INTO catalog VALUE (id, '" + catStr + "')");
+
             /* Заполнение из консоли mysql, для удобста вытаскивания присвоил id
             CREATE TABLE catalog (id int auto_increment, name char (100), primary key (id));
             INSERT INTO catalog VALUE (id, 'Золотая Обертка');

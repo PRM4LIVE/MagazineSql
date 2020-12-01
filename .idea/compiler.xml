@@ -9,5 +9,8 @@
         <module name="MagazineSql" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel target="8">
+      <module name="MagazineSql" target="8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
