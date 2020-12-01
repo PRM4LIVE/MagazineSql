@@ -19,7 +19,7 @@ public class Main {
                 String str = getChatId;
                 statement.execute("CREATE TABLE " + str + "(product char (100), price double)");
                 statement.execute("INSERT INTO chatid VALUE ('" + getChatId + "')");
-            }
+            } //не забыть создать таблицу chatid
             System.out.println("Поступает запрос на сумму в корзине");
             String str2 = "basket" + scanner.nextLine();
             ResultSet smp = statement.executeQuery("SELECT price FROM " + str2);
@@ -43,10 +43,12 @@ public class Main {
             }
 
 
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 }
+//CREATE TABLE chatid (id char (30);
 //CREATE TABLE orderList (id int, price double, qty int, status char (30));
-//CREATE TABLE catalog (name char (100))
+//CREATE TABLE catalog (id int auto_increment, name char (100), primary key (id));
